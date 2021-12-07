@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="warning" class = 'ion-padding-end'> 
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons> 
+    <ion-title>
+      {{ProductName}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class = "ion-padding-start ion-padding-end">  
+  <ion-card>
+    <ion-img src="{{pic}}"></ion-img>
+  </ion-card>
+  <br>
+    ชื่อสายพันธุ์ : {{ProductName}} <br><br>
+    ข้อมูล : {{docDetail}} <br>
+</ion-content>
+
+<ion-toolbar style = "height: 30px;" color="warning" class = 'ion-padding-end'> </ion-toolbar>

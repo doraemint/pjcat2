@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-img src="./assets/icon/home.jpg"></ion-img>
+</ion-header>
+
+<ion-content class='ion-padding-top ion-padding-start ion-padding-end'>
+  <ion-label>  
+    <h1><B>CAT STORY</B></h1>
+    <h2><B>แมว (ชื่อวิทยาศาสตร์: Felis catus)</B></h2>
+      <h3>เป็นสัตว์เลี้ยงลูกด้วยนม อยู่ในตระกูล Felidae ต้นตระกูลมาจากเสือไซบีเรีย (Felis tigris altaica) ซึ่งมีช่วงลำตัวตั้งแต่จมูกถึงปลายหางยาวประมาณ 40 เซนติเมตร
+          แมวที่เลี้ยงตามบ้าน จะมีรูปร่างขนาดเล็ก ขนาดลำตัวยาว ช่วงขาสั้นและจัดอยู่ในกลุ่มของประเภทสัตว์กินเนื้อ มีเขี้ยวและเล็บแหลมคมสามารถหดซ่อนเล็บได้เช่นเดียวกับเสือ
+          สืบสายเลือดมาจากแมวป่าที่มีขนาดใหญ่กว่า ซึ่งลักษณะบางอย่างของแมวยังคงพบเห็นได้ในแมวบ้านปัจจุบัน    
+      </h3> 
+    
+      <br> 
+      <h3>
+          แมวเริ่มเข้ามาเกี่ยวข้องกับวิถีชีวิตของมนุษย์ตั้งแต่เมื่อประมาณ 9,500 ปีก่อน [5] ซึ่งจากหลักฐานทางประวัติศาสตร์ที่เก่าแก่ที่สุดของแมวคือการทำมัมมี่แมวที่พบในสมัยอียิปต์โบราณ 
+          หรือในพิพิธภัณฑ์อังกฤษในลอนดอน มีการแสดงสมบัติที่นำออกมาจากพีระมิดโบราณแห่งอียิปต์ ซึ่งรวมถึงมัมมี่แมวหลายตัว ซึ่งเมื่อนำเอาผ้าพันมัมมี่ออกก็พบว่า แมวในสมัยโบราณทุกตัวมีลักษณะใกล้เคียงกัน 
+          คือเป็นแมวที่มีรูปร่างเล็ก ขนสั้นมีแต้มสีน้ำตาล มีความคล้ายคลึงกับพันธุ์ในปัจจุบัน ที่เรียกว่าแมวอะบิสซิเนีย
+      </h3> 
+      <br>
+      <h1><B>ศึกษาสายพันธุ์แท้ของแมว</B></h1>
+      <h3>รับข้อมูลเกี่ยวกับอารมณ์และความต้องการของแมวมากกว่า 50 สายพันธุ์ คุณกำลังมองหา</h3>     
+  </ion-label>
+  <br><br> 
+
+  <ion-toolbar color="warning">
+    <center><h1><b><ion-text color="dark">สายพันธุ์แมว</ion-text></b></h1></center>
+    
+    <ion-searchbar (ionChange) ="searchItem($event)" ></ion-searchbar>
+    
+  <ion-card *ngFor="let item of displaySearchProducts">
+    <ion-label (click) = "goToDetail(item.ProductName , item.docDetail, item.pic)">
+    <img src = {{item.pic}} width="500"/>
+  <ion-list>
+  <ion-item>
+    <ion-card-header>
+      <ion-card-title><B>{{item.ProductName}}</B></ion-card-title>
+    </ion-card-header>
+  </ion-item>
+  </ion-list>
+     </ion-label>
+  </ion-card>
+
+
+  </ion-toolbar>
+  <br>
+</ion-content> 
