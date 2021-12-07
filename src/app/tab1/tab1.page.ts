@@ -9,6 +9,7 @@ import { DetailPage } from '../detail/detail.page';
 })
 export class Tab1Page {
   products: any;
+  displayProducts = [];
 
   constructor(private navCtrl: NavController) {
     this.products = [
@@ -64,7 +65,14 @@ export class Tab1Page {
         docDetail: 'บรมสวยก็แมวสายพันธุ์แร็กดอลล์นี่แหละ หน้าหวานมาก ขี้อ้อนเป็นที่หนึ่ง แถมนิสัยยังเรียบร้อย ใจเย็น ปรับตัวเข้ากับสภาพแวดล้อมได้ดี ใครหากำลังหาแมวมาเลี้ยงในคอนโดหรืออพาร์ตเมนต์พันธุ์นี้เหมาะเลย น้องชอบมารอที่ประตูด้วยนะ แบบนี้จะไม่หลงได้ไง'
       },
     ];
+    this.displayProducts = this.products;
+  }
 
+  searchItem(event) {
+    const searchText = event.target.value.toLowerCase();
+    this.displayProducts = this.products.filter(item => {
+      return item.ProductName.toLowerCase().indexOf(searchText.toLowerCase()) > -1;
+    });
   }
 
   goToDetail(name, detail, pic) {
