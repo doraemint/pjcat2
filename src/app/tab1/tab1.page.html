@@ -28,7 +28,7 @@
     
     <ion-searchbar (ionChange) ="searchItem($event)" ></ion-searchbar>
     
-  <ion-card *ngFor="let item of displaySearchProducts">
+  <ion-card *ngFor="let item of displayProducts">
     <ion-label (click) = "goToDetail(item.ProductName , item.docDetail, item.pic)">
     <img src = {{item.pic}} width="500"/>
   <ion-list>
